@@ -1,0 +1,42 @@
+name: flutter_modular_architecture
+
+packages:
+  - .
+  - app
+  - feature_a
+  - feature_b
+  - feature_c
+  - navigation
+
+sdkPath: .fvm/flutter_sdk
+
+scripts:
+  # ==================================================================================================
+  # build & rebuild
+  # ==================================================================================================
+
+  build:
+    run: melos get && melos br
+
+  rebuild:
+    run: melos cln && melos get && melos br
+
+  # ==================================================================================================
+  # pub get & pub run build_runner build &
+  # ==================================================================================================
+
+  get:
+    run: flutter pub get
+    description: flutter pub get
+    exec:
+      concurrency: 10
+
+  br:
+    run: melos exec -c 10 --depends-on="build_runner" -- flutter pub run build_runner build --delete-conflicting-outputs
+    description: flutter pub run build_runner build
+
+  cln:
+    run: flutter clean
+    description: flutter clean
+    exec:
+      concurrency: 10
