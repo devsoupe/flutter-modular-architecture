@@ -1,5 +1,6 @@
-import 'package:feature_a/src/feature_a_page.dart';
+import 'package:feature_a/feature_a.dart';
 import 'package:flutter/material.dart';
+import 'package:navigation/navigation.dart';
 
 class FeatureAScreen extends StatefulWidget {
   const FeatureAScreen({
@@ -13,6 +14,9 @@ class FeatureAScreen extends StatefulWidget {
 class _FeatureAScreenState extends State<FeatureAScreen> {
   @override
   Widget build(BuildContext context) {
+    final Navigation navigation = getIt();
+    debugPrint('feature_a : navigation : ${navigation.hashCode}');
+
     return const FeatureAPage();
   }
 }

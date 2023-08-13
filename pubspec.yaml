@@ -13,6 +13,8 @@ dependencies:
 
   app:
     path: app
+  feature_a:
+    path: feature_a
   navigation:
     path: navigation
 

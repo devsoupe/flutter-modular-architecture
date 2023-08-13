@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:injectable/injectable.dart';
 import 'package:navigation/navigation.dart';
 
+@Injectable(as: Navigation)
 @LazySingleton()
 class GoRouterNavigation implements Navigation {
   final Color darkBlue = const Color.fromARGB(255, 18, 32, 47);

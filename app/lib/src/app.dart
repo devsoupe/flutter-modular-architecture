@@ -7,8 +7,9 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Navigation navigator = getIt<GoRouterNavigation>();
+    final Navigation navigation = getIt();
+    debugPrint('app : navigation : ${navigation.hashCode}');
 
-    return navigator.router();
+    return navigation.router();
   }
 }
