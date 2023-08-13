@@ -10,15 +10,6 @@ class App extends StatelessWidget {
     final Navigation navigator = GoRouterNavigation();
 
     return navigator.router();
-
-    // return MaterialApp(
-    //   title: 'App',
-    //   theme: ThemeData(
-    //     colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-    //     useMaterial3: true,
-    //   ),
-    //   home: const MyHomePage(title: 'App'),
-    // );
   }
 }
 

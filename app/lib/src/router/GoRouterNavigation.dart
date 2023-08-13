@@ -19,11 +19,12 @@ class GoRouterNavigation implements Navigation {
   @override
   Widget router() {
     return MaterialApp.router(
-        routerConfig: _router,
-        theme: ThemeData.dark().copyWith(
-          scaffoldBackgroundColor: darkBlue,
-        ),
-        debugShowCheckedModeBanner: false,
-        title: 'Go router');
+      routerConfig: _router,
+      theme: ThemeData.dark().copyWith(
+        scaffoldBackgroundColor: darkBlue,
+      ),
+      // debugShowCheckedModeBanner: false,
+      title: 'Go router',
+    );
   }
 }
