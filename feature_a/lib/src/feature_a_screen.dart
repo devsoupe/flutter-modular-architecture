@@ -14,9 +14,6 @@ class FeatureAScreen extends StatefulWidget {
 class _FeatureAScreenState extends State<FeatureAScreen> {
   @override
   Widget build(BuildContext context) {
-    final Navigation navigation = getIt();
-    debugPrint('feature_a : navigation : ${navigation.hashCode}');
-
     return const FeatureAPage();
   }
 }

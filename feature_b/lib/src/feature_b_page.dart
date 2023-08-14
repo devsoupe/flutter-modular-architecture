@@ -1,18 +1,18 @@
-import 'package:feature_a/src/di/injector.dart';
+import 'package:feature_b/src/di/injector.dart';
 import 'package:flutter/material.dart';
 import 'package:navigation/navigation.dart';
 
-class FeatureAPage extends StatefulWidget {
-  const FeatureAPage({
+class FeatureBPage extends StatefulWidget {
+  const FeatureBPage({
     Key? key,
   }) : super(key: key);
 
   @override
-  State<FeatureAPage> createState() => _FeatureAPageState();
+  State<FeatureBPage> createState() => _FeatureBPageState();
 }
 
-class _FeatureAPageState extends State<FeatureAPage> {
-  late final navigation = aGetIt<GoNavigation>();
+class _FeatureBPageState extends State<FeatureBPage> {
+  late final navigation = bGetIt<GoNavigation>();
 
   @override
   void initState() {
@@ -26,15 +26,15 @@ class _FeatureAPageState extends State<FeatureAPage> {
 
   @override
   Widget build(BuildContext context) {
-    debugPrint('feature_a : navigation : ${navigation.hashCode}');
+    debugPrint('feature_b : navigation : ${navigation.hashCode}');
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Feature A'),
+        title: const Text('Feature B'),
       ),
       body: Center(
         child: ElevatedButton(
-          child: const Text("Navigate Feature B"),
+          child: const Text("Navigate Feature C"),
           onPressed: () => navigation.navigateTo(context),
         ),
       ),

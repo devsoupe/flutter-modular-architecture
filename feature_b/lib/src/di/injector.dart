@@ -1,16 +1,16 @@
-import 'package:app/src/di/injector.config.dart';
+import 'package:feature_b/src/di/injector.config.dart';
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
 
-final GetIt appGetIt = GetIt.instance;
+final GetIt bGetIt = GetIt.instance;
 
-@InjectableInit(initializerName: r'$initAppGetIt')
-Future<void> configureAppDependencies(
+@InjectableInit(initializerName: r'$initFeatureBGetIt')
+Future<void> configureFeatureBDependencies(
   GetIt getIt, {
   String? environment,
   EnvironmentFilter? environmentFilter,
 }) async {
-  $initAppGetIt(
+  $initFeatureBGetIt(
     getIt,
     environment: environment,
     environmentFilter: environmentFilter,
