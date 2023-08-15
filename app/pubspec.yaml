@@ -11,6 +11,8 @@ dependencies:
   flutter:
     sdk: flutter
 
+  di_injector:
+    path: ../di_injector
   feature_a:
     path: ../feature_a
   feature_b:

@@ -1,4 +1,5 @@
 import 'package:app/app.dart';
+import 'package:di_injector/di_injector.dart';
 import 'package:feature_a/feature_a.dart';
 import 'package:feature_b/feature_b.dart';
 import 'package:flutter_modular_architecture/di/injector.config.dart';
@@ -29,6 +30,11 @@ Future<void> configureDependencies({
     environmentFilter: environmentFilter,
   );
   await configureNavigationDependencies(
+    getIt,
+    environment: environment,
+    environmentFilter: environmentFilter,
+  );
+  await configureDiInjectorDependencies(
     getIt,
     environment: environment,
     environmentFilter: environmentFilter,

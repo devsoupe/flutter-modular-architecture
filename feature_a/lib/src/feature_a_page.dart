@@ -1,4 +1,4 @@
-import 'package:feature_a/src/di/injector.dart';
+import 'package:di_injector/di_injector.dart';
 import 'package:flutter/material.dart';
 import 'package:navigation/navigation.dart';
 
@@ -12,7 +12,7 @@ class FeatureAPage extends StatefulWidget {
 }
 
 class _FeatureAPageState extends State<FeatureAPage> {
-  late final navigation = aGetIt<GoNavigation>();
+  late final navigation = getIt<GoNavigation>();
 
   @override
   void initState() {

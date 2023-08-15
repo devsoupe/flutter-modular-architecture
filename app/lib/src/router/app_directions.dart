@@ -1,3 +1,4 @@
+import 'package:di_injector/di_injector.dart';
 import 'package:feature_a/feature_a.dart';
 import 'package:feature_b/feature_b.dart';
 import 'package:go_router/go_router.dart';
@@ -9,8 +10,8 @@ class AppDirections extends GoDirections {
   @override
   GoRouter build() => GoRouter(
         routes: [
-          aGetIt<AScreen>().build([]),
-          bGetIt<BScreen>().build([]),
+          getIt<AScreen>().build([]),
+          getIt<BScreen>().build([]),
         ],
       );
 }

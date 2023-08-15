@@ -7,6 +7,7 @@ packages:
   - feature_b
   - feature_c
   - navigation
+  - di_injector
 
 sdkPath: .fvm/flutter_sdk
 
