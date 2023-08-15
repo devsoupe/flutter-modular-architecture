@@ -1,6 +1,5 @@
-import 'package:app/app.dart';
-import 'package:app/src/router/app_directions.dart';
-import 'package:flutter/material.dart';
+import 'package:di_injector/di_injector.dart';
+import 'package:flutter/material.dart' hide Navigator;
 import 'package:navigation/navigation.dart';
 
 class App extends StatefulWidget {
@@ -11,8 +10,7 @@ class App extends StatefulWidget {
 }
 
 class _AppState extends State<App> {
-  late final navigation = appGetIt<GoNavigation>();
-  late final directions = appGetIt<AppDirections>();
+  late final navigator = getIt<Navigator>();
 
   @override
   void initState() {
@@ -26,9 +24,8 @@ class _AppState extends State<App> {
 
   @override
   Widget build(BuildContext context) {
-    debugPrint('app : navigation : ${navigation.hashCode}');
-    debugPrint('app : directions : ${directions.hashCode}');
+    debugPrint('app : navigator : ${navigator.hashCode}');
 
-    return navigation.build(directions.build());
+    return navigator.build();
   }
 }

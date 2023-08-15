@@ -1,16 +1,21 @@
-import 'package:go_router/go_router.dart';
+import 'package:navigation/navigation.dart';
 import 'package:navigation/src/screen.dart';
 
 abstract class GoScreen extends Screen<GoRoute> {
-  abstract final String name;
-  abstract final String path;
+  @override
+  abstract final Route<GoRouteInfo> route;
+
   abstract final GoRouterPageBuilder? pageBuilder;
 
+  final List<GoScreen>? screens;
+
+  GoScreen(this.screens);
+
   @override
-  GoRoute build(List<GoRoute>? child) => GoRoute(
-        name: name,
-        path: path,
+  GoRoute build() => GoRoute(
+        name: route.build().name,
+        path: route.build().path,
         pageBuilder: pageBuilder,
-        routes: child ?? [],
+        routes: screens?.map((e) => e.build()).toList() ?? [],
       );
 }

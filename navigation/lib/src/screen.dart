@@ -1,3 +1,7 @@
+import 'package:navigation/navigation.dart';
+
 abstract class Screen<T> {
-  T build(List<T>? child);
+  abstract final Route route;
+
+  T build();
 }

@@ -1,6 +1,8 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Route;
+import 'package:navigation/navigation.dart';
 
 abstract class Navigation<T> {
-  Widget build(T routes);
-  void navigateTo(BuildContext context);
+  T build();
+
+  void navigate(BuildContext context, Route route);
 }

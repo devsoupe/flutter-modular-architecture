@@ -1,10 +1,10 @@
-import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+import 'package:flutter/material.dart' hide Route;
 import 'package:navigation/navigation.dart';
-import 'package:navigation/src/directions.dart';
-import 'package:navigation/src/navigation.dart';
 
-abstract class GoNavigation extends Navigation<GoRouter> {
+abstract class GoNavigation<Widget> extends Navigation {
   @override
-  Widget build(GoRouter routes);
+  Widget build();
+
+  @override
+  void navigate(BuildContext context, Route route);
 }

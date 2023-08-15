@@ -1,16 +1,19 @@
-import 'package:flutter/material.dart';
+import 'package:di_injector/di_injector.dart';
+import 'package:flutter/material.dart' hide Route, Navigator;
 import 'package:go_router/go_router.dart';
 import 'package:injectable/injectable.dart';
 import 'package:navigation/navigation.dart';
 
-@Singleton(as: GoNavigation)
-class AppNavigation implements GoNavigation {
+@Singleton()
+class Navigator extends GoNavigation {
   final Color darkBlue = const Color.fromARGB(255, 18, 32, 47);
 
   @override
-  Widget build(GoRouter routes) {
+  Widget build() {
+    final routers = getIt<GoPaths>().build();
+
     return MaterialApp.router(
-      routerConfig: routes,
+      routerConfig: routers,
       theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: darkBlue,
       ),
@@ -20,9 +23,7 @@ class AppNavigation implements GoNavigation {
   }
 
   @override
-  void navigateTo(BuildContext context) {
-    debugPrint("app : navigateTo");
-
-    context.goNamed('b');
+  void navigate(BuildContext context, Route route) {
+    context.goNamed(route.build().name);
   }
 }
