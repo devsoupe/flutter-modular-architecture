@@ -1,5 +1,5 @@
 import 'package:di_injector/di_injector.dart';
-import 'package:flutter/material.dart' hide Route, Navigator;
+import 'package:flutter/material.dart' hide Navigator;
 import 'package:go_router/go_router.dart';
 import 'package:injectable/injectable.dart';
 import 'package:navigation/navigation.dart';
@@ -10,7 +10,7 @@ class Navigator extends GoNavigation {
 
   @override
   Widget build() {
-    final routers = getIt<GoPaths>().build();
+    final routers = getIt<GoGraph>().build();
 
     return MaterialApp.router(
       routerConfig: routers,
@@ -23,7 +23,7 @@ class Navigator extends GoNavigation {
   }
 
   @override
-  void navigate(BuildContext context, Route route) {
+  void navigate(BuildContext context, Path route) {
     context.goNamed(route.build().name);
   }
 }

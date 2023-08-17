@@ -2,13 +2,13 @@ import 'package:injectable/injectable.dart';
 import 'package:navigation/navigation.dart';
 
 @Singleton()
-class RouteFeatureA implements Route<GoRouteInfo> {
+class PathFeatureA implements GoPath {
   @override
-  GoRouteInfo build() => GoRouteInfo('a', '/');
+  GoPathInfo build() => GoPathInfo('a', '/');
 }
 
 @Singleton()
-class RouteFeatureB implements Route<GoRouteInfo> {
+class PathFeatureB implements GoPath {
   @override
-  GoRouteInfo build() => GoRouteInfo('b', 'b');
+  GoPathInfo build() => GoPathInfo('b', 'b');
 }

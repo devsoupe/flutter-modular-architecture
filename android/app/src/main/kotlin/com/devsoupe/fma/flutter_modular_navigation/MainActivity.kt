@@ -1,4 +1,4 @@
-package com.devsoupe.fma.flutter_modular_architecture
+package com.devsoupe.fma.flutter_modular_navigation
 
 import io.flutter.embedding.android.FlutterActivity
 

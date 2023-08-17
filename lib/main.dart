@@ -1,6 +1,6 @@
 import 'package:app/app.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_modular_architecture/di/injector.dart';
+import 'package:flutter_modular_navigation/di/injector.dart';
 
 void main() async {
   await configureDependencies();

@@ -4,10 +4,10 @@ import 'package:go_router/go_router.dart';
 import 'package:injectable/injectable.dart';
 import 'package:navigation/navigation.dart';
 
-@Singleton(as: GoPaths)
-class AppDirections extends GoPaths {
+@Singleton(as: GoGraph)
+class AppGraph extends GoGraph {
   @override
-  List<GoScreen> get path => [
+  List<GoScreen> get graph => [
         AScreen([
           BScreen([]),
         ]),
@@ -15,6 +15,6 @@ class AppDirections extends GoPaths {
 
   @override
   GoRouter build() => GoRouter(
-        routes: path.map((e) => e.build()).toList(),
+        routes: graph.map((e) => e.build()).toList(),
       );
 }

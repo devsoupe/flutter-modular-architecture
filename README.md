@@ -1,4 +1,4 @@
-# flutter_modular_architecture
+# flutter_modular_navigation
 
 Flutter Modular Architecture
 
