@@ -1,11 +1,13 @@
 import 'package:di_injector/di_injector.dart';
+import 'package:feature_a/feature_a.dart';
+import 'package:feature_b/feature_b.dart';
 import 'package:flutter/material.dart' hide Navigator;
 import 'package:go_router/go_router.dart';
 import 'package:injectable/injectable.dart';
 import 'package:navigation/navigation.dart';
 
-@Singleton()
-class Navigator extends GoNavigation {
+@Singleton(as: GoNavigation)
+class AppNavigation extends GoNavigation {
   final Color darkBlue = const Color.fromARGB(255, 18, 32, 47);
 
   @override
@@ -24,6 +26,14 @@ class Navigator extends GoNavigation {
 
   @override
   void navigate(BuildContext context, GoDirection direction) {
-    context.goNamed(direction.build().name);
+    switch (direction.runtimeType) {
+      case DirectionFeatureA:
+        context.goNamed(getIt<AScreen>().name);
+        break;
+
+      case DirectionFeatureB:
+        context.goNamed(getIt<BScreen>().name);
+        break;
+    }
   }
 }

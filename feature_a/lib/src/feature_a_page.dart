@@ -12,7 +12,7 @@ class FeatureAPage extends StatefulWidget {
 }
 
 class _FeatureAPageState extends State<FeatureAPage> {
-  late final navigator = getIt<Navigator>();
+  late final navigation = getIt<GoNavigation>();
 
   @override
   void initState() {
@@ -26,7 +26,7 @@ class _FeatureAPageState extends State<FeatureAPage> {
 
   @override
   Widget build(BuildContext context) {
-    debugPrint('feature_a : navigator : ${navigator.hashCode}');
+    debugPrint('feature_a : navigation : ${navigation.hashCode}');
 
     return Scaffold(
       appBar: AppBar(
@@ -36,7 +36,7 @@ class _FeatureAPageState extends State<FeatureAPage> {
         child: ElevatedButton(
           child: const Text("Navigate Feature B"),
           onPressed: () {
-            navigator.navigate(context, getIt<DirectionFeatureB>());
+            navigation.navigate(context, getIt<DirectionFeatureB>());
           },
         ),
       ),

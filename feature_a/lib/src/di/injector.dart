@@ -2,8 +2,6 @@ import 'package:feature_a/src/di/injector.config.dart';
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
 
-// final GetIt aGetIt = GetIt.instance;
-
 @InjectableInit(initializerName: r'$initFeatureAGetIt')
 Future<void> configureFeatureADependencies(
   GetIt getIt, {

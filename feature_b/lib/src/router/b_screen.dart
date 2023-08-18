@@ -1,19 +1,19 @@
-import 'package:di_injector/di_injector.dart';
 import 'package:feature_b/feature_b.dart';
 import 'package:flutter/material.dart';
 import 'package:injectable/injectable.dart';
 import 'package:navigation/navigation.dart';
 
-@Injectable()
+@Singleton()
 class BScreen extends GoScreen {
   @override
-  GoDirection get direction => getIt<DirectionFeatureB>();
+  String get name => 'b';
+
+  @override
+  String get path => 'b';
 
   @override
   GoRouterPageBuilder? get pageBuilder => (context, state) => MaterialPage(
         key: state.pageKey,
         child: const FeatureBScreen(),
       );
-
-  BScreen(super.child);
 }

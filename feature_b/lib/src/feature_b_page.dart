@@ -1,5 +1,4 @@
 import 'package:di_injector/di_injector.dart';
-import 'package:feature_b/src/di/injector.dart';
 import 'package:flutter/material.dart' hide Navigator;
 import 'package:navigation/navigation.dart';
 
@@ -13,7 +12,7 @@ class FeatureBPage extends StatefulWidget {
 }
 
 class _FeatureBPageState extends State<FeatureBPage> {
-  late final navigating = bGetIt<Navigator>();
+  late final navigation = getIt<GoNavigation>();
 
   @override
   void initState() {
@@ -27,7 +26,7 @@ class _FeatureBPageState extends State<FeatureBPage> {
 
   @override
   Widget build(BuildContext context) {
-    debugPrint('feature_b : navigating : ${navigating.hashCode}');
+    debugPrint('feature_b : navigation : ${navigation.hashCode}');
 
     return Scaffold(
       appBar: AppBar(
@@ -36,7 +35,8 @@ class _FeatureBPageState extends State<FeatureBPage> {
       body: Center(
         child: ElevatedButton(
           child: const Text("Navigate Feature A"),
-          onPressed: () => navigating.navigate(context, getIt<DirectionFeatureA>()),
+          onPressed: () =>
+              navigation.navigate(context, getIt<DirectionFeatureA>()),
         ),
       ),
     );

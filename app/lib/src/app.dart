@@ -10,7 +10,7 @@ class App extends StatefulWidget {
 }
 
 class _AppState extends State<App> {
-  late final navigator = getIt<Navigator>();
+  late final navigator = getIt<GoNavigation>();
 
   @override
   void initState() {
