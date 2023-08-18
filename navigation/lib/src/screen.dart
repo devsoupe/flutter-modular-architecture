@@ -6,7 +6,7 @@ import 'package:navigation/navigation.dart';
 /// 구현체 : 각각의 feature 모듈
 ///
 abstract class Screen<T> {
-  abstract final Path path;
+  abstract final Direction direction;
 
   T build();
 }

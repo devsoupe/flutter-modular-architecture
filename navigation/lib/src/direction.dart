@@ -3,6 +3,6 @@
 /// 구현 대상 : 모든 화면
 /// 구현체 : 모든 screen 클래스
 ///
-abstract class Path<T> {
+abstract class Direction<T> {
   T build();
 }

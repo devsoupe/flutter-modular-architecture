@@ -7,7 +7,7 @@ import 'package:navigation/navigation.dart';
 @Injectable()
 class BScreen extends GoScreen {
   @override
-  GoPath get path => getIt<PathFeatureB>();
+  GoDirection get direction => getIt<DirectionFeatureB>();
 
   @override
   GoRouterPageBuilder? get pageBuilder => (context, state) => MaterialPage(

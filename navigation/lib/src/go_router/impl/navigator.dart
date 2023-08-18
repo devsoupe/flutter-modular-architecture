@@ -23,7 +23,7 @@ class Navigator extends GoNavigation {
   }
 
   @override
-  void navigate(BuildContext context, Path route) {
-    context.goNamed(route.build().name);
+  void navigate(BuildContext context, GoDirection direction) {
+    context.goNamed(direction.build().name);
   }
 }

@@ -36,7 +36,7 @@ class _FeatureAPageState extends State<FeatureAPage> {
         child: ElevatedButton(
           child: const Text("Navigate Feature B"),
           onPressed: () {
-            navigator.navigate(context, getIt<PathFeatureB>());
+            navigator.navigate(context, getIt<DirectionFeatureB>());
           },
         ),
       ),
