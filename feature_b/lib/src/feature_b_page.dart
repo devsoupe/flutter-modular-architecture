@@ -1,5 +1,5 @@
 import 'package:di_injector/di_injector.dart';
-import 'package:flutter/material.dart' hide Navigator;
+import 'package:flutter/material.dart';
 import 'package:navigation/navigation.dart';
 
 class FeatureBPage extends StatefulWidget {
@@ -12,7 +12,7 @@ class FeatureBPage extends StatefulWidget {
 }
 
 class _FeatureBPageState extends State<FeatureBPage> {
-  late final navigation = getIt<GoNavigation>();
+  late final navigation = getIt<Navigation>();
 
   @override
   void initState() {
@@ -36,7 +36,7 @@ class _FeatureBPageState extends State<FeatureBPage> {
         child: ElevatedButton(
           child: const Text("Navigate Feature A"),
           onPressed: () =>
-              navigation.navigate(context, getIt<DirectionFeatureA>()),
+              navigation.navigateTo(context, getIt<DirectionFeatureA>()),
         ),
       ),
     );

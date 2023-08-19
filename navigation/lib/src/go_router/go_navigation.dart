@@ -1,10 +1,10 @@
-import 'package:flutter/material.dart' hide Navigator;
-import 'package:navigation/navigation.dart' hide Navigator;
+import 'package:flutter/material.dart';
+import 'package:navigation/navigation.dart';
 
-abstract class GoNavigation extends Navigation<Widget, GoDirection> {
+abstract class GoNavigation extends Navigation<Widget, Direction> {
   @override
-  Widget build();
+  Widget buildRoot();
 
   @override
-  void navigate(BuildContext context, GoDirection direction);
+  void navigateTo(BuildContext context, Direction direction);
 }

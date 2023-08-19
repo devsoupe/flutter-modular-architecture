@@ -4,7 +4,7 @@ import 'package:feature_b/feature_b.dart';
 import 'package:injectable/injectable.dart';
 import 'package:navigation/navigation.dart';
 
-@Singleton(as: GoGraph)
+@Singleton()
 class AppGraph extends GoGraph {
   @override
   List<GoRoute> get routeList => [
