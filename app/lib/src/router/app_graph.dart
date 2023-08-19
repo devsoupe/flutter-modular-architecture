@@ -7,9 +7,9 @@ import 'package:navigation/navigation.dart';
 @Singleton()
 class AppGraph extends GoGraph {
   @override
-  List<GoRoute> get routeList => [
-        getIt<AScreen>().build([
-          getIt<BScreen>().build([]),
+  List<GoScreen> get screenList => [
+        getIt<AScreen>().child([
+          getIt<BScreen>().child([]),
         ]),
       ];
 }

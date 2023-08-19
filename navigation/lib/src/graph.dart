@@ -1,5 +1,7 @@
-abstract class Graph<T, R> {
-  abstract final List<T> routeList;
+import 'package:navigation/navigation.dart';
+
+abstract class Graph<T extends Screen, R> {
+  abstract final List<T> screenList;
 
   R build();
 }

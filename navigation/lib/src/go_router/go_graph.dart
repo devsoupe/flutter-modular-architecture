@@ -1,12 +1,12 @@
 import 'package:go_router/go_router.dart';
 import 'package:navigation/navigation.dart';
 
-abstract class GoGraph extends Graph<GoRoute, GoRouter> {
+abstract class GoGraph extends Graph<GoScreen, GoRouter> {
   @override
-  abstract final List<GoRoute> routeList;
+  abstract final List<GoScreen> screenList;
 
   @override
   GoRouter build() => GoRouter(
-        routes: routeList,
+        routes: screenList.map((e) => e.build()).toList(),
       );
 }

@@ -1,3 +1,5 @@
 abstract class Screen<T> {
-  T build(List<T>? child);
+  Screen<T> child(List<Screen<T>>? child);
+
+  T build();
 }

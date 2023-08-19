@@ -5,11 +5,19 @@ abstract class GoScreen extends Screen<GoRoute> {
   abstract final String path;
   abstract final GoRouterPageBuilder? pageBuilder;
 
+  List<Screen<GoRoute>>? _child;
+
   @override
-  GoRoute build(List<GoRoute>? child) => GoRoute(
+  GoScreen child(List<Screen<GoRoute>>? child) {
+    _child = child;
+    return this;
+  }
+
+  @override
+  GoRoute build() => GoRoute(
         name: name,
         path: path,
         pageBuilder: pageBuilder,
-        routes: child ?? [],
+        routes: _child?.map((e) => e.build()).toList() ?? [],
       );
 }
