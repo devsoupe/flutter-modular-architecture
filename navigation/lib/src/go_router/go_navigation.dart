@@ -6,5 +6,5 @@ abstract class GoNavigation extends Navigation<Widget, Direction> {
   Widget buildRoot();
 
   @override
-  void navigateTo(BuildContext context, Direction direction);
+  void navigate(BuildContext context, Direction direction);
 }

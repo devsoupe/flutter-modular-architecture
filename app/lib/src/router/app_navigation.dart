@@ -26,7 +26,7 @@ class AppNavigation extends GoNavigation {
   }
 
   @override
-  void navigateTo(BuildContext context, Direction direction) {
+  void navigate(BuildContext context, Direction direction) {
     switch (direction.runtimeType) {
       case DirectionFeatureA:
         context.goNamed(getIt<AScreen>().name);

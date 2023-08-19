@@ -1,5 +1,5 @@
-abstract class Screen<T> {
-  Screen<T> child(List<Screen<T>>? child);
+abstract class Screen<ROUTE> {
+  Screen<ROUTE> child(List<Screen<ROUTE>>? child);
 
-  T build();
+  ROUTE build();
 }
