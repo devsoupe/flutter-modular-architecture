@@ -14,9 +14,9 @@ dependencies:
   app:
     path: app
   feature_a:
-    path: feature_a
+    path: feature/feature_a
   feature_b:
-    path: feature_b
+    path: feature/feature_b
   navigation:
     path: navigation
   di_injector:
