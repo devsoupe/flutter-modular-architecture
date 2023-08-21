@@ -12,15 +12,15 @@ dependencies:
     sdk: flutter
 
   app:
-    path: app
+    path: apps/app
   feature_a:
     path: feature/feature_a
   feature_b:
     path: feature/feature_b
   navigation:
-    path: navigation
+    path: core/navigation
   di_injector:
-    path: di_injector
+    path: apps/di_injector
 
   cupertino_icons: ^1.0.2
   get_it: ^7.2.0

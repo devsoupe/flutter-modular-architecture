@@ -2,10 +2,9 @@ name: flutter_modular_navigation
 
 packages:
   - .
-  - app
+  - apps/**
+  - core/**
   - feature/**
-  - navigation
-  - di_injector
 
 sdkPath: .fvm/flutter_sdk
 

@@ -12,9 +12,9 @@ dependencies:
     sdk: flutter
 
   di_injector:
-    path: ../../di_injector
+    path: ../../apps/di_injector
   navigation:
-    path: ../../navigation
+    path: ../../core/navigation
 
   cupertino_icons: ^1.0.2
   get_it: ^7.2.0

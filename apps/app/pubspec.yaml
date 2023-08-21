@@ -14,11 +14,11 @@ dependencies:
   di_injector:
     path: ../di_injector
   feature_a:
-    path: ../feature/feature_a
+    path: ../../feature/feature_a
   feature_b:
-    path: ../feature/feature_b
+    path: ../../feature/feature_b
   navigation:
-    path: ../navigation
+    path: ../../core/navigation
 
   cupertino_icons: ^1.0.2
   go_router: ^10.0.0
