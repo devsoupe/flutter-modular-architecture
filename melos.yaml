@@ -14,10 +14,10 @@ scripts:
   # ==================================================================================================
 
   build:
-    run: melos get && melos br
+    run: melos bs && melos get && melos br
 
   rebuild:
-    run: melos cln && melos get && melos br
+    run: melos cln && melos bs && melos get && melos br
 
   # ==================================================================================================
   # pub get & pub run build_runner build &

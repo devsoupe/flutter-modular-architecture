@@ -1,16 +1,32 @@
 # flutter_modular_navigation
 
-Flutter Modular Architecture
+Flutter Modular Navigation
 
-## Getting Started
+## Dependency 
 
-This project is a starting point for a Flutter application.
+### flutter_modular_navigation
+- apps/app
+- feature/feature_a
+- feature/feature_b
+- core/navigation
+- apps/di_injector
 
-A few resources to get you started if this is your first Flutter project:
+### app
+- feature/feature_a
+- feature/feature_b
+- core/navigation
+- apps/di_injector
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### feature_a
+- core/navigation
+- apps/di_injector
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### feature_b
+- core/navigation
+- apps/di_injector
+
+### navigation
+none
+
+### di_injector
+none
