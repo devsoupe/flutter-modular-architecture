@@ -16,7 +16,7 @@ dependencies:
   navigation:
     path: ../../core/navigation
   nav_direction:
-    path: ../nav_direction
+    path: ../common/nav_direction
 
   cupertino_icons: ^1.0.2
   get_it: ^7.2.0

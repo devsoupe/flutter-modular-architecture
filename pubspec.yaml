@@ -18,7 +18,7 @@ dependencies:
   home:
     path: feature/home
   nav_direction:
-    path: feature/nav_direction
+    path: feature/common/nav_direction
   navigation:
     path: core/navigation
   di_injector:
