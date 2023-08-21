@@ -6,14 +6,14 @@ Flutter Modular Navigation
 
 ### flutter_modular_navigation
 - apps/app
-- feature/feature_a
-- feature/feature_b
+- feature/root
+- feature/home
 - core/navigation
 - apps/di_injector
 
 ### app
-- feature/feature_a
-- feature/feature_b
+- feature/root
+- feature/home
 - core/navigation
 - apps/di_injector
 

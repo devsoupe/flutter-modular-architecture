@@ -1,14 +1,14 @@
-import 'package:feature_a/src/di/injector.config.dart';
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
+import 'package:root/src/di/injector.config.dart';
 
-@InjectableInit(initializerName: r'$initFeatureAGetIt')
-Future<void> configureFeatureADependencies(
+@InjectableInit(initializerName: r'$initRootGetIt')
+Future<void> configureRootDependencies(
   GetIt getIt, {
   String? environment,
   EnvironmentFilter? environmentFilter,
 }) async {
-  $initFeatureAGetIt(
+  $initRootGetIt(
     getIt,
     environment: environment,
     environmentFilter: environmentFilter,

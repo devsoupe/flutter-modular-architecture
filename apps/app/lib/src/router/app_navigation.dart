@@ -1,11 +1,12 @@
 import 'package:app/src/router/app_graph.dart';
 import 'package:di_injector/di_injector.dart';
-import 'package:feature_a/feature_a.dart';
-import 'package:feature_b/feature_b.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:home/home.dart';
 import 'package:injectable/injectable.dart';
+import 'package:nav_direction/nav_direction.dart';
 import 'package:navigation/navigation.dart';
+import 'package:root/root.dart';
 
 @Singleton(as: Navigation)
 class AppNavigation extends GoNavigation {
@@ -27,13 +28,13 @@ class AppNavigation extends GoNavigation {
 
   @override
   void navigate(BuildContext context, Direction direction) {
-    switch (direction.runtimeType) {
-      case DirectionFeatureA:
-        context.goNamed(getIt<AScreen>().name);
+    switch (direction) {
+      case (final RootDirection _):
+        context.goNamed(getIt<RootRouter>().name);
         break;
 
-      case DirectionFeatureB:
-        context.goNamed(getIt<BScreen>().name);
+      case (final HomeDirection _):
+        context.goNamed(getIt<HomeRouter>().name);
         break;
     }
   }

@@ -1,10 +1,11 @@
-import 'package:feature_a/feature_a.dart';
+import 'package:nav_direction/nav_direction.dart';
+import 'package:root/root.dart';
 import 'package:flutter/material.dart';
 import 'package:injectable/injectable.dart';
 import 'package:navigation/navigation.dart';
 
 @Singleton()
-class AScreen extends GoScreen {
+class RootRouter extends GoScreen {
   @override
   String get name => 'a';
 
@@ -14,6 +15,9 @@ class AScreen extends GoScreen {
   @override
   GoRouterPageBuilder? get pageBuilder => (context, state) => MaterialPage(
         key: state.pageKey,
-        child: const FeatureAScreen(),
+        child: const RootScreen(),
       );
 }
+
+@Singleton(as: RootDirection)
+class RootRouterDirection extends RootDirection {}

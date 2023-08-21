@@ -13,10 +13,12 @@ dependencies:
 
   app:
     path: apps/app
-  feature_a:
-    path: feature/feature_a
-  feature_b:
-    path: feature/feature_b
+  root:
+    path: feature/root
+  home:
+    path: feature/home
+  nav_direction:
+    path: feature/nav_direction
   navigation:
     path: core/navigation
   di_injector:

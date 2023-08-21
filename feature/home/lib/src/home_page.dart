@@ -1,17 +1,18 @@
 import 'package:di_injector/di_injector.dart';
 import 'package:flutter/material.dart';
+import 'package:nav_direction/nav_direction.dart';
 import 'package:navigation/navigation.dart';
 
-class FeatureBPage extends StatefulWidget {
-  const FeatureBPage({
+class HomePage extends StatefulWidget {
+  const HomePage({
     Key? key,
   }) : super(key: key);
 
   @override
-  State<FeatureBPage> createState() => _FeatureBPageState();
+  State<HomePage> createState() => _HomePageState();
 }
 
-class _FeatureBPageState extends State<FeatureBPage> {
+class _HomePageState extends State<HomePage> {
   late final navigation = getIt<Navigation>();
 
   @override
@@ -26,17 +27,17 @@ class _FeatureBPageState extends State<FeatureBPage> {
 
   @override
   Widget build(BuildContext context) {
-    debugPrint('feature_b : navigation : ${navigation.hashCode}');
+    debugPrint('home : navigation : ${navigation.hashCode}');
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Feature B'),
+        title: const Text('Home'),
       ),
       body: Center(
         child: ElevatedButton(
-          child: const Text("Navigate Feature A"),
+          child: const Text("Navigate Root"),
           onPressed: () =>
-              navigation.navigate(context, getIt<DirectionFeatureA>()),
+              navigation.navigate(context, getIt<RootDirection>()),
         ),
       ),
     );
