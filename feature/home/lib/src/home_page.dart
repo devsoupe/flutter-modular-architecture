@@ -4,9 +4,7 @@ import 'package:nav_direction/nav_direction.dart';
 import 'package:navigation/navigation.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({
-    Key? key,
-  }) : super(key: key);
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -36,8 +34,7 @@ class _HomePageState extends State<HomePage> {
       body: Center(
         child: ElevatedButton(
           child: const Text("Navigate Root"),
-          onPressed: () =>
-              navigation.navigate(context, getIt<RootDirection>()),
+          onPressed: () => navigation.navigate(context, RootDirection()),
         ),
       ),
     );

@@ -1,3 +1,14 @@
 import 'package:navigation/navigation.dart';
 
-abstract class HomeDirection implements Direction {}
+class HomeDirection extends Direction<HomeParam> {
+  @override
+  final HomeParam? param;
+
+  HomeDirection({this.param});
+}
+
+class HomeParam extends Param {
+  final int value;
+
+  HomeParam(this.value);
+}

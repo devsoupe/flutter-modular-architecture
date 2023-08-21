@@ -1,11 +1,10 @@
-import 'package:nav_direction/nav_direction.dart';
-import 'package:root/root.dart';
 import 'package:flutter/material.dart';
 import 'package:injectable/injectable.dart';
 import 'package:navigation/navigation.dart';
+import 'package:root/root.dart';
 
 @Singleton()
-class RootRouter extends GoScreen {
+class RootNavScreen extends GoScreen {
   @override
   String get name => 'a';
 
@@ -18,6 +17,3 @@ class RootRouter extends GoScreen {
         child: const RootScreen(),
       );
 }
-
-@Singleton(as: RootDirection)
-class RootRouterDirection extends RootDirection {}

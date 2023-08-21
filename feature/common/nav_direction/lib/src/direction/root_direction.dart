@@ -1,3 +1,10 @@
 import 'package:navigation/navigation.dart';
 
-abstract class RootDirection implements Direction {}
+class RootDirection extends Direction<RootParam> {
+  @override
+  final RootParam? param;
+
+  RootDirection({this.param});
+}
+
+class RootParam extends Param {}

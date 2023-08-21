@@ -1,12 +1,12 @@
+import 'dart:math';
+
 import 'package:di_injector/di_injector.dart';
 import 'package:flutter/material.dart';
 import 'package:nav_direction/nav_direction.dart';
 import 'package:navigation/navigation.dart';
 
 class RootPage extends StatefulWidget {
-  const RootPage({
-    Key? key,
-  }) : super(key: key);
+  const RootPage({Key? key}) : super(key: key);
 
   @override
   State<RootPage> createState() => _RootPageState();
@@ -37,7 +37,8 @@ class _RootPageState extends State<RootPage> {
         child: ElevatedButton(
           child: const Text("Navigate Home"),
           onPressed: () {
-            navigation.navigate(context, getIt<HomeDirection>());
+            final homeDirection = HomeDirection(param: HomeParam(Random().nextInt(1000)));
+            navigation.navigate(context, homeDirection);
           },
         ),
       ),

@@ -30,11 +30,11 @@ class AppNavigation extends GoNavigation {
   void navigate(BuildContext context, Direction direction) {
     switch (direction) {
       case (final RootDirection _):
-        context.goNamed(getIt<RootRouter>().name);
+        context.goNamed(getIt<RootNavScreen>().name, extra: direction.param);
         break;
 
       case (final HomeDirection _):
-        context.goNamed(getIt<HomeRouter>().name);
+        context.goNamed(getIt<HomeNavScreen>().name, extra: direction.param);
         break;
     }
   }

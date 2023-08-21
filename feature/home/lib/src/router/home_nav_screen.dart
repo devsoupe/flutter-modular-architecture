@@ -5,7 +5,7 @@ import 'package:nav_direction/nav_direction.dart';
 import 'package:navigation/navigation.dart';
 
 @Singleton()
-class HomeRouter extends GoScreen {
+class HomeNavScreen extends GoScreen {
   @override
   String get name => 'b';
 
@@ -15,9 +15,6 @@ class HomeRouter extends GoScreen {
   @override
   GoRouterPageBuilder? get pageBuilder => (context, state) => MaterialPage(
         key: state.pageKey,
-        child: const HomeScreen(),
+        child: HomeScreen(state.extra as HomeParam),
       );
 }
-
-@Singleton(as: HomeDirection)
-class HomeRouterDirection extends HomeDirection {}
