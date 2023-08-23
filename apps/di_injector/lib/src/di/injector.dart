@@ -10,8 +10,7 @@ Future<void> configureDiInjectorDependencies(
   String? environment,
   EnvironmentFilter? environmentFilter,
 }) async {
-  $initDiInjectorGetIt(
-    getIt,
+  getIt.$initDiInjectorGetIt(
     environment: environment,
     environmentFilter: environmentFilter,
   );

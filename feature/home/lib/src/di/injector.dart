@@ -8,8 +8,7 @@ Future<void> configureHomeDependencies(
   String? environment,
   EnvironmentFilter? environmentFilter,
 }) async {
-  $initHomeGetIt(
-    getIt,
+  getIt.$initHomeGetIt(
     environment: environment,
     environmentFilter: environmentFilter,
   );

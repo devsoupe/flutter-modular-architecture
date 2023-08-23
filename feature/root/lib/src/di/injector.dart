@@ -8,8 +8,7 @@ Future<void> configureRootDependencies(
   String? environment,
   EnvironmentFilter? environmentFilter,
 }) async {
-  $initRootGetIt(
-    getIt,
+  getIt.$initRootGetIt(
     environment: environment,
     environmentFilter: environmentFilter,
   );

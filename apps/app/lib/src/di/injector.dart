@@ -8,8 +8,7 @@ Future<void> configureAppDependencies(
   String? environment,
   EnvironmentFilter? environmentFilter,
 }) async {
-  $initAppGetIt(
-    getIt,
+  getIt.$initAppGetIt(
     environment: environment,
     environmentFilter: environmentFilter,
   );

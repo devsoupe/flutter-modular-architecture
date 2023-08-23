@@ -38,3 +38,9 @@ scripts:
     description: flutter clean
     exec:
       concurrency: 10
+
+  up:
+    run: flutter pub upgrade
+    description: flutter pub upgrade
+    exec:
+      concurrency: 10

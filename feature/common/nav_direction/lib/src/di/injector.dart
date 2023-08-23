@@ -8,8 +8,7 @@ Future<void> configureNavDirectionDependencies(
   String? environment,
   EnvironmentFilter? environmentFilter,
 }) async {
-  $initNavDirectionGetIt(
-    getIt,
+  getIt.$initNavDirectionGetIt(
     environment: environment,
     environmentFilter: environmentFilter,
   );

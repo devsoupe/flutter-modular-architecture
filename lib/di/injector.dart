@@ -39,6 +39,4 @@ Future<void> configureDependencies({
     environment: environment,
     environmentFilter: environmentFilter,
   );
-
-  $initGetIt(getIt);
 }
