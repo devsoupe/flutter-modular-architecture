@@ -33,14 +33,29 @@ class _RootPageState extends State<RootPage> {
       appBar: AppBar(
         title: const Text('Root'),
       ),
-      body: Center(
-        child: ElevatedButton(
-          child: const Text("Navigate Home"),
-          onPressed: () {
-            final homeDirection = HomeDirection(param: HomeParam(Random().nextInt(1000)));
-            navigation.navigate(context, homeDirection);
-          },
-        ),
+      body: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ElevatedButton(
+                child: const Text("Navigate RootChild"),
+                onPressed: () {
+                  final rootChildDirection = RootChildDirection(param: RootChildParam(Random().nextInt(1000)));
+                  navigation.navigate(context, rootChildDirection);
+                },
+              ),
+              ElevatedButton(
+                child: const Text("Navigate Home"),
+                onPressed: () {
+                  final homeDirection = HomeDirection(param: HomeParam(Random().nextInt(1000)));
+                  navigation.navigate(context, homeDirection);
+                },
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }

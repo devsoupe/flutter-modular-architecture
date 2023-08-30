@@ -7,6 +7,7 @@ import 'package:injectable/injectable.dart';
 import 'package:nav_direction/nav_direction.dart';
 import 'package:navigation/navigation.dart';
 import 'package:root/root.dart';
+import 'package:root_child/root_child.dart';
 
 @Singleton(as: Navigation)
 class AppNavigation extends GoNavigation {
@@ -31,6 +32,10 @@ class AppNavigation extends GoNavigation {
     switch (direction) {
       case (final RootDirection _):
         context.goNamed(getIt<RootNavScreen>().name, extra: direction.param);
+        break;
+
+      case (final RootChildDirection _):
+        context.goNamed(getIt<RootChildNavScreen>().name, extra: direction.param);
         break;
 
       case (final HomeDirection _):

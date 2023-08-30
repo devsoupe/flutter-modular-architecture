@@ -1,5 +1,5 @@
-name: flutter_modular_navigation
-description: Flutter Modular Navigation
+name: root_child
+description: root_child
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
 version: 1.0.0+1
@@ -11,20 +11,12 @@ dependencies:
   flutter:
     sdk: flutter
 
-  app:
-    path: apps/app
-  root:
-    path: feature/root
-  root_child:
-    path: feature/root_child
-  home:
-    path: feature/home
-  nav_direction:
-    path: feature/common/nav_direction
-  navigation:
-    path: core/navigation
   di_injector:
-    path: apps/di_injector
+    path: ../../apps/di_injector
+  navigation:
+    path: ../../core/navigation
+  nav_direction:
+    path: ../common/nav_direction
 
   cupertino_icons: ^1.0.5
   get_it: ^7.6.0
@@ -35,7 +27,6 @@ dev_dependencies:
     sdk: flutter
 
   flutter_lints: ^2.0.2
-  melos: ^3.1.1
   build_runner: ^2.4.6
   injectable_generator: ^2.4.0
 

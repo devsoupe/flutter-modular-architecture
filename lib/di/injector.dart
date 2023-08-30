@@ -1,11 +1,11 @@
 import 'package:app/app.dart';
 import 'package:di_injector/di_injector.dart';
-import 'package:flutter_modular_navigation/di/injector.config.dart';
 import 'package:get_it/get_it.dart';
 import 'package:home/home.dart';
 import 'package:injectable/injectable.dart';
 import 'package:navigation/navigation.dart';
 import 'package:root/root.dart';
+import 'package:root_child/root_child.dart';
 
 final GetIt getIt = GetIt.instance;
 
@@ -20,6 +20,11 @@ Future<void> configureDependencies({
     environmentFilter: environmentFilter,
   );
   await configureRootDependencies(
+    getIt,
+    environment: environment,
+    environmentFilter: environmentFilter,
+  );
+  await configureRootChildDependencies(
     getIt,
     environment: environment,
     environmentFilter: environmentFilter,

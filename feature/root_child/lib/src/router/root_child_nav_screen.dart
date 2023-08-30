@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:root_child/root_child.dart';
 import 'package:injectable/injectable.dart';
+import 'package:nav_direction/nav_direction.dart';
 import 'package:navigation/navigation.dart';
-import 'package:root/root.dart';
 
 @Singleton()
-class RootNavScreen extends GoScreen {
+class RootChildNavScreen extends GoScreen {
   @override
-  String get name => 'root';
+  String get name => 'root_child';
 
   @override
-  String get path => '/';
+  String get path => 'root_child';
 
   @override
   GoRouterPageBuilder? get pageBuilder => (context, state) => MaterialPage(
         key: state.pageKey,
-        child: const RootScreen(),
+        child: RootChildScreen(state.extra as RootChildParam),
       );
 }

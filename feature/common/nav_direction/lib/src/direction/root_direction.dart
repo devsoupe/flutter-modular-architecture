@@ -7,4 +7,4 @@ class RootDirection extends Direction<RootParam> {
   RootDirection({this.param});
 }
 
-class RootParam extends Param {}
+class RootParam implements Param {}
