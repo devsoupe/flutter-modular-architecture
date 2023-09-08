@@ -6,5 +6,7 @@ abstract class GoNavigation extends Navigation<Widget, Direction> {
   Widget buildRoot();
 
   @override
-  void navigate(BuildContext context, Direction direction);
+  void navigate(Direction direction);
+
+  Screen? getScreenBy(Type type);
 }

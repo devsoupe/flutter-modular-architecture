@@ -34,7 +34,7 @@ class _HomePageState extends State<HomePage> {
       body: Center(
         child: ElevatedButton(
           child: const Text("Navigate Root"),
-          onPressed: () => navigation.navigate(context, RootDirection()),
+          onPressed: () => navigation.navigate(RootDirection()),
         ),
       ),
     );

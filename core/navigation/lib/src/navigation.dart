@@ -4,5 +4,5 @@ import 'package:navigation/navigation.dart';
 abstract class Navigation<T extends Widget, R extends Direction> {
   T buildRoot();
 
-  void navigate(BuildContext context, R direction);
+  void navigate(R direction);
 }

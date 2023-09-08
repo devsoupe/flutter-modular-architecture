@@ -28,19 +28,22 @@ class AppNavigation extends GoNavigation {
   }
 
   @override
-  void navigate(BuildContext context, Direction direction) {
-    switch (direction) {
-      case (final RootDirection _):
-        context.goNamed(getIt<RootNavScreen>().name, extra: direction.param);
-        break;
+  void navigate(Direction direction) {
+    final globalContext = getIt<AppGraph>().getGlobalContext();
+    final targetScreen = getScreenBy(direction.runtimeType);
 
-      case (final RootChildDirection _):
-        context.goNamed(getIt<RootChildNavScreen>().name, extra: direction.param);
-        break;
-
-      case (final HomeDirection _):
-        context.goNamed(getIt<HomeNavScreen>().name, extra: direction.param);
-        break;
+    if (globalContext != null && targetScreen != null) {
+      globalContext.goNamed(targetScreen.name, extra: direction.param);
     }
+  }
+
+  @override
+  GoScreen? getScreenBy(Type type) {
+    return switch (type) {
+      RootDirection => getIt<RootNavScreen>(),
+      RootChildDirection => getIt<RootChildNavScreen>(),
+      HomeDirection => getIt<HomeNavScreen>(),
+      _ => null
+    };
   }
 }

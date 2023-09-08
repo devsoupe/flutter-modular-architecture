@@ -43,14 +43,14 @@ class _RootPageState extends State<RootPage> {
                 child: const Text("Navigate RootChild"),
                 onPressed: () {
                   final rootChildDirection = RootChildDirection(param: RootChildParam(Random().nextInt(1000)));
-                  navigation.navigate(context, rootChildDirection);
+                  navigation.navigate(rootChildDirection);
                 },
               ),
               ElevatedButton(
                 child: const Text("Navigate Home"),
                 onPressed: () {
                   final homeDirection = HomeDirection(param: HomeParam(Random().nextInt(1000)));
-                  navigation.navigate(context, homeDirection);
+                  navigation.navigate(homeDirection);
                 },
               ),
             ],
