@@ -13,34 +13,46 @@ scripts:
   # build & rebuild
   # ==================================================================================================
 
-  build:
-    run: melos bs && melos get && melos br
 
-  rebuild:
-    run: melos cln && melos bs && melos get && melos br
 
   # ==================================================================================================
   # pub get & pub run build_runner build &
   # ==================================================================================================
 
-  get:
-    run: flutter pub get
+  sync:
+    run: melos bs
     description: flutter pub get
-    exec:
-      concurrency: 10
+
+  sync_cr:
+    run: melos bs
+    description: flutter pub get (choose & run)
+    packageFilters:
+      flutter: true
 
   br:
-    run: melos exec -c 10 --depends-on="build_runner" -- flutter pub run build_runner build --delete-conflicting-outputs
+    run: melos exec -c 30 --depends-on="build_runner" -- flutter pub run build_runner build --delete-conflicting-outputs
     description: flutter pub run build_runner build
 
-  cln:
-    run: flutter clean
-    description: flutter clean
-    exec:
-      concurrency: 10
+  br_cr:
+    run: melos exec -c 30 --depends-on="build_runner" -- flutter pub run build_runner build --delete-conflicting-outputs
+    description: flutter pub run build_runner build (choose & run)
+    packageFilters:
+      depends-on: "build_runner"
 
   up:
-    run: flutter pub upgrade
+    run: melos exec -c 30 -- flutter pub upgrade
     description: flutter pub upgrade
-    exec:
-      concurrency: 10
+
+  up_cr:
+    run: melos exec -c 30 -- flutter pub upgrade
+    description: flutter pub upgrade (choose & run)
+    packageFilters:
+      flutter: true
+
+  cln:
+    run: |
+      melos exec -c 30 -- flutter clean && \
+      melos exec -- find . -name '*.lock' -delete && \
+      melos exec -- find . -name '*overrides.yaml' -delete && \
+      melos exec -- find . -name '*.config.dart' -delete
+    description: flutter clean
